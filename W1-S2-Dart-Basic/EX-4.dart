@@ -6,8 +6,14 @@ void main() {
     'vegetarian': 6.5,
   };
 
-  // Example order
-  const order = ['margherita', 'pepperoni', 'pineapple'];
-
-  // Your code
+  List<String> order = ['margherita', 'pepperoni', 'pepperoni'];
+  double total = 0;
+  for (String num in order) {
+    if (pizzaPrices.containsKey(num)) {
+      total += pizzaPrices[num]!;
+    } else {
+      print("\" $num \" is not on the menu");
+    }
+  }
+  print("Total: \$$total");
 }
