@@ -18,7 +18,14 @@ class CustomWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: end == null ? start : null,
+        gradient: (start != null && end != null)
+            ? LinearGradient(
+                colors: [start!, end!],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              )
+            : null,
+        color: (start != null && end == null) ? start : null,
         borderRadius: BorderRadius.circular(30),
       ),
       child: Center(
