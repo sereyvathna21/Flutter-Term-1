@@ -1,45 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomWidget(
-                text: 'OOP',
-                gradient: LinearGradient(
-                  colors: [Colors.blueAccent, Colors.lightBlue],
-                ),
-              ),
-              CustomWidget(
-                text: 'DART',
-                color: Colors.blue,
-              ),
-              CustomWidget(
-                text: 'FLUTTER',
-                gradient: LinearGradient(
-                  colors: [Colors.orange, Colors.red],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class CustomWidget extends StatelessWidget {
   final String text;
   final Color? color;
@@ -74,4 +34,36 @@ class CustomWidget extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(const MaterialApp(
+    home: Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomWidget(
+              text: "Hello 1",
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.black],
+              ),
+            ),
+            CustomWidget(
+              text: "Hello 2",
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.red],
+              ),
+            ),
+            CustomWidget(
+              text: "Hello 3",
+              gradient: LinearGradient(
+                colors: [Colors.purple, Colors.yellow],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  ));
 }
