@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class CustomWidget extends StatelessWidget {
   final String text;
-  final Color? color;
-  final LinearGradient? gradient;
+  final Color? start;
+  final Color? end;
 
   const CustomWidget({
     super.key,
     required this.text,
-    this.color,
-    this.gradient,
+    this.start,
+    this.end,
   });
 
   @override
@@ -18,8 +18,7 @@ class CustomWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        gradient: gradient,
-        color: gradient == null ? color : null,
+        color: end == null ? start : null,
         borderRadius: BorderRadius.circular(30),
       ),
       child: Center(
@@ -45,21 +44,18 @@ void main() {
           children: [
             CustomWidget(
               text: "Hello 1",
-              gradient: LinearGradient(
-                colors: [Colors.blue, Colors.black],
-              ),
+              start: Colors.blue,
+              end: Colors.black,
             ),
             CustomWidget(
               text: "Hello 2",
-              gradient: LinearGradient(
-                colors: [Colors.blue, Colors.red],
-              ),
+              start: Colors.blue,
+              end: Colors.red,
             ),
             CustomWidget(
               text: "Hello 3",
-              gradient: LinearGradient(
-                colors: [Colors.purple, Colors.yellow],
-              ),
+              start: Colors.purple,
+              end: Colors.yellow,
             ),
           ],
         ),
