@@ -1,4 +1,3 @@
-// Custom exception for invalid operations
 class InvalidAmountException implements Exception {
   final String message;
   InvalidAmountException(this.message);
@@ -23,7 +22,6 @@ class AccountAlreadyExistsException implements Exception {
   String toString() => 'AccountAlreadyExistsException: $message';
 }
 
-// BankAccount class with encapsulated balance and methods
 class BankAccount {
   final int accountId;
   final String accountOwner;
@@ -37,7 +35,6 @@ class BankAccount {
 
   double get balance => _balance;
 
-  // Credits an amount to the account if the amount is positive
   void credit(double amount) {
     if (amount <= 0) {
       throw InvalidAmountException('Credit amount must be positive!');
@@ -45,7 +42,6 @@ class BankAccount {
     _balance += amount;
   }
 
-  // Withdraws an amount if sufficient balance exists
   void withdraw(double amount) {
     if (amount <= 0) {
       throw InvalidAmountException('Withdrawal amount must be positive!');
@@ -57,14 +53,12 @@ class BankAccount {
   }
 }
 
-// Bank class with accounts stored in a map
 class Bank {
   final String name;
   final Map<int, BankAccount> _accounts = {};
 
   Bank({required this.name});
 
-  // Creates a new account and adds it to the bank
   BankAccount createAccount(int accountId, String accountOwner) {
     if (_accounts.containsKey(accountId)) {
       throw AccountAlreadyExistsException(
@@ -76,7 +70,6 @@ class Bank {
     return newAccount;
   }
 
-  // Retrieves an account by ID
   BankAccount getAccount(int accountId) {
     if (!_accounts.containsKey(accountId)) {
       throw InvalidAmountException(
@@ -85,7 +78,6 @@ class Bank {
     return _accounts[accountId]!;
   }
 
-  // Lists all accounts in the bank
   void listAccounts() {
     if (_accounts.isEmpty) {
       print('No accounts found in $name.');

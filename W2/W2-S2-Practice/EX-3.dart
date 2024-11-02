@@ -35,6 +35,7 @@ class CustomDuration {
 
   CustomDuration._fromMilliseconds(this._milliseconds);
 
+  @override
   String toString() {
     int totalSeconds = _milliseconds ~/ 1000;
     int hours = totalSeconds ~/ 3600;

@@ -28,11 +28,11 @@ class Distance {
 }
 
 void main() {
-  var distance1 = Distance.fromKm(3.4);
-  var distance2 = Distance.fromMeters(1000);
+  var distance1 = const Distance.fromKm(3.4);
+  var distance2 = const Distance.fromMeters(1000);
   print((distance1 + distance2).inCentimeters);
 
-  var mixedDistance = Distance(cm: 10, m: 0.2, km: 4);
+  var mixedDistance = const Distance(cm: 10, m: 0.2, km: 4);
   print(mixedDistance.inMeters);
   print(mixedDistance.inCentimeters);
 }
