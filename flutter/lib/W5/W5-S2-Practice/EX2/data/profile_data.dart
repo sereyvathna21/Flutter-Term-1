@@ -27,11 +27,11 @@ class TileData {
 }
 
 ProfileData profileData1 = ProfileData(
-  name: 'Vathna',
+  name: 'Sokhom',
   position: 'Flutter Developer',
-  avatarUrl: 'assets/w5-s2/aang.png',
+  avatarUrl: 'assets/images/khom.jpg',
   tiles: [
-    TileData(icon: Icons.phone, title: 'Phone Number', value: '+123 456 7890'),
+    TileData(icon: Icons.phone, title: 'Phone Number', value: '+885 456 7890'),
     TileData(icon: Icons.location_on, title: 'Address', value: 'Cambodia'),
   ],
 );
